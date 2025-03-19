@@ -9,10 +9,10 @@ const listapedido = document.getElementById('.lista-pedido');
 const totalElemento = document.getElementById(".total");
 
 // Cria variavel que armazena o total do pedido 
-let total - 0;
+let total = 0;
 
 // Percorre todos os botoes "adicionar" e adiciona um evento de clique em cada um
-botoesAdicionar.forEach(botao) => {
+botoesAdicionar.forEach((botao) => {
    botao.addEventlistender('click', () =>{
         //obetem o elemento pai do botao
         const produto = botao.parentElement;
@@ -37,4 +37,4 @@ botoesAdicionar.forEach(botao) => {
 
        totalElemento.testContent = `total: R$ ${total.toField(2)}`;
    });
-};
+});

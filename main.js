@@ -1,50 +1,53 @@
-// Simulacao de adicao de itens de pedido
-// Seleciona todos os botoes que possuem a classe 'adicionar'
+//Simulação de adição de itens de pedido
+//Seleciona todos os botões que possuem a classe 'adicionar'
 const botoesAdicionar = document.querySelectorAll('.adicionar');
 
-// Seleciona a lista onde os itens do pedido sao exibidos
-const listapedido = document.getElementById('.lista-pedido');
+//Seleciona a lista onde os itens do pedidos serão exibidos
+const listaPedido = document.getElementById('lista-pedido');
 
-// Selecione o elemento que exibira o valor do pedido
-const totalElemento = document.getElementById(".total");
+//seleciona o elemento que exibira o total do pedido
+const totalElemento = document.getElementById('total');
 
-// Cria variavel que armazena o total do pedido 
+//variavel que armazena o total do pedido
 let total = 0;
 
-// Percorre todos os botoes "adicionar" e adiciona um evento de clique em cada um
+// percorrer todos os botões 'adicionar' e adicionar um evento de clique em cada um
 botoesAdicionar.forEach((botao) => {
-   botao.addEventlistender('click', () =>{
-        //obetem o elemento pai do botao
+    botao.addEventListener('click', () => {
+        //obtem o elemento pai do botão
         const produto = botao.parentElement;
-        
-        //Obtem o nome do produto a partir do texto tag <h3>
-        const nome = produto.querySelector
-        ('h3').textContent
-        
-        //Obtem o valor do produto rremovendo o "R$" e converte o valor ´para decimal
-        const preco = paresfloat(produto.querySelector(".preco").textContet.replace('R$',''));
 
-        //obtem o novo item de lista <li> para adicionar o produto ao pedido
-        const Itempedido = document.createElement('li');
+        //obtem o nome do produto a partir do texto dat tag <h3>
+        const nome = produto.querySelector('h3').textContent
 
-        itemPedido.textContent = `${nome} - R$ ${preco.toFixed(2)}`;
-         
-        //Adicione o item criado a lista de pedido 
-        listapedido,appendChild(itemPedido);
+        //obtem o preço do produto removendo o texto "R$" e converte o valor para decimal
+        const preco = parseFloat(produto.querySelector(".preco").textContent.replace("R$",""));
 
-        // Atuazile o total da compra
+        //obtem um item da lista <li> para adicionar o produto ao pedido
+        const itemPedido = document.createElement("li");
+
+        itemPedido.textContent = ${nome} - R$ ${preco.toFixed(2)};
+
+        //adiona o item criado á lista de pedidos
+        listaPedido.appendChild(itemPedido);
+
+        //atualiza o total da compra
         total += preco;
 
-       totalElemento.testContent = `total: R$ ${total.toField(2)}`;
-   });
-});
+        totalElemento.textContent = Total: R$ ${total.toFixed(2)};
+    })
+})
 
+//simula a finalização do pedido
+const botaoFinalizarPedido = document.getElementById("finalizar-pedido");
 
-// Simula finalizacao do pedido
-const botaoFinalizarPedido = document.getElementById('finalizar-pedido');
+botaoFinalizarPedido.addEventListener("click", () => {
+    alert("Pedido finalizado com sucesso" + totalElemento.textContent);
+    listaPedido.innerHTML = " ";
 
-botaoFinalizarPedido.addEventlistender("clicki",() =>{
-   alert("pedido finalizado com sucesso " + totalElemento.textContent);
+    total = 0;
+
+    totalElemento.textContent = Total: R$ ${total.toFixed(2)};
 })
 
 

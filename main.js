@@ -38,3 +38,13 @@ botoesAdicionar.forEach((botao) => {
        totalElemento.testContent = `total: R$ ${total.toField(2)}`;
    });
 });
+
+
+// Simula finalizacao do pedido
+const botaoFinalizarPedido = document.getElementById('finalizar-pedido');
+
+botaoFinalizarPedido.addEventlistender("clicki",() =>{
+   alert("pedido finalizado com sucesso " + totalElemento.textContent);
+})
+
+

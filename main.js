@@ -26,7 +26,7 @@ botoesAdicionar.forEach((botao) => {
         //obtem um item da lista <li> para adicionar o produto ao pedido
         const itemPedido = document.createElement("li");
 
-        itemPedido.textContent = ${nome} - R$ ${preco.toFixed(2)};
+        itemPedido.textContent = `${nome} - R$ ${preco.toFixed(2)}`;
 
         //adiona o item criado á lista de pedidos
         listaPedido.appendChild(itemPedido);
@@ -34,7 +34,7 @@ botoesAdicionar.forEach((botao) => {
         //atualiza o total da compra
         total += preco;
 
-        totalElemento.textContent = Total: R$ ${total.toFixed(2)};
+        totalElemento.textContent = `Total: R$ ${total.toFixed(2)}`;
     })
 })
 
@@ -47,7 +47,7 @@ botaoFinalizarPedido.addEventListener("click", () => {
 
     total = 0;
 
-    totalElemento.textContent = Total: R$ ${total.toFixed(2)};
+    totalElemento.textContent = `Total: R$ ${total.toFixed(2)}`;
 })
 
 
